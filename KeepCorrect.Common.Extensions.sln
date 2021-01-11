@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeepCorrect.Common.Extensions", "KeepCorrect.Common.Extensions\KeepCorrect.Common.Extensions.csproj", "{84C83E3E-D7BE-4BB3-BD34-961A75C2887F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeepCorrect.Common.Extensions.Tests", "KeepCorrect.Common.Extensions.Tests\KeepCorrect.Common.Extensions.Tests.csproj", "{C44B258B-1FB9-44FA-B691-CDD323A28517}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84C83E3E-D7BE-4BB3-BD34-961A75C2887F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C83E3E-D7BE-4BB3-BD34-961A75C2887F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C83E3E-D7BE-4BB3-BD34-961A75C2887F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C83E3E-D7BE-4BB3-BD34-961A75C2887F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44B258B-1FB9-44FA-B691-CDD323A28517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44B258B-1FB9-44FA-B691-CDD323A28517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44B258B-1FB9-44FA-B691-CDD323A28517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44B258B-1FB9-44FA-B691-CDD323A28517}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
