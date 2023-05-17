@@ -1,11 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>KeepCorrect</Authors>
         <Copyright>KeepCorrect</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
 </Project>
