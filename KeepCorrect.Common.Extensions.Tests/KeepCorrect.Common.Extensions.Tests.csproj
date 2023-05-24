@@ -2,11 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
-
         <IsPackable>false</IsPackable>
-
         <OutputType>Library</OutputType>
-
         <LangVersion>latestmajor</LangVersion>
     </PropertyGroup>
 
