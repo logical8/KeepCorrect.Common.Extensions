@@ -1,24 +1,25 @@
 ﻿using System;
+using System.Linq;
 
 namespace KeepCorrect.Common.Extensions
 {
     public static class EnumConverter
     {
         /// <summary>
-        /// Convert int value to Enum
+        /// Convert uint value to Enum
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="enumAsInt"></param>
+        /// <param name="enumAsUInt"></param>
         /// <exception cref="NotSupportedException">T has not such int value</exception>
         /// <returns>Enum type of T</returns>
-        public static T ToEnum<T>(this int enumAsInt) where T : struct, Enum
+        public static T ToEnum<T>(this uint enumAsUInt) where T : struct, Enum
         {
             var enumType = typeof(T);
 
-            var value = (Enum)Enum.ToObject(enumType, enumAsInt);
+            var value = (Enum)Enum.ToObject(enumType, enumAsUInt);
             if (Enum.IsDefined(enumType, value) == false)
             {
-                throw new NotSupportedException($"Unable to convert value {enumAsInt} to the type: {enumType}");
+                throw new NotSupportedException($"Unable to convert value {enumAsUInt} to the type: {enumType}");
             }
 
             return (T)value;
@@ -76,11 +77,16 @@ namespace KeepCorrect.Common.Extensions
         /// <typeparam name="TSourceEnum"></typeparam>
         /// <typeparam name="TDestEnum"></typeparam>
         /// <returns></returns>
-        public static TDestEnum ToEnumByInt<TSourceEnum, TDestEnum>(this TSourceEnum value)
+        public static TDestEnum ToEnumByUInt<TSourceEnum, TDestEnum>(this TSourceEnum value)
             where TSourceEnum : struct, Enum
             where TDestEnum : struct, Enum
         {
-            return ToEnum<TDestEnum>(Convert.ToInt32(value));
+            var sourceType = Enum.GetUnderlyingType(typeof(TSourceEnum));
+            var destype = Enum.GetUnderlyingType(typeof(TDestEnum));
+
+            if (new[] { sourceType, destype }.All(x => x == typeof(uint)))
+                return ToEnum<TDestEnum>(Convert.ToUInt32(value));
+            throw new ArgumentException("Argument has different underlying type (not uint)");
         }
     }
 }
